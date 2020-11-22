@@ -1,20 +1,26 @@
 class Trash {
-    constructor(x,y,width,height) {
+    constructor() {
       var options = {
           isStatic: true
       }
-      this.body = Bodies.rectangle(x,y,width,height,options);
+      
+      this.bottombody=Bodies.rectangle(600,690,200,10,options)
+      this.leftbody=Bodies.rectangle(490,550,10,200,options)
+      this.rightbody=Bodies.rectangle(710,550,10,200,options)
+    
       this.width = width;
       this.height = height;
-      World.add(world, this.body);
+      World.add(world,[ this.bottombody,this.leftbody,this.rightbody]);
+        
+    
       this.image=loadImage("dustbingreen.png")
     }
     display(){
-      var pos =this.body.position;
-      rectMode(CENTER);
+      //var pos =this.body.position;
+     
       fill("white");
-      rect(pos.x, pos.y, this.width, this.height);
+      
       imageMode(CENTER);
-      image(this.image, pos.x,pos.y, this.width, this.height);
+      image(this.image, this.bottombody.position.x,this.bottombody.position.y-100, 200, 200);
     }
   };
