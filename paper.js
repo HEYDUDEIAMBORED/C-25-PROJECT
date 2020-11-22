@@ -9,7 +9,7 @@ class Paper{
         this.body = Matter.Bodies.circle(x,y,20, options);
         
         World.add(world,this.body);
-        //this.image=loadImage("paper.png")
+        this.image=loadImage("paper.png")
     }
     display(){
         var pos=this.body.position;
@@ -23,7 +23,7 @@ class Paper{
         ellipseMode(RADIUS);
         ellipse(0,0,20,20);
         pop();
-       // imageMode(CENTER);
-       // image(this.image, pos.x, pos.y, this.width, this.height);
+        imageMode(CENTER);
+        image(this.image, pos.x, pos.y, this.width, this.height);
     }
 }
